@@ -1,3 +1,8 @@
+![image](https://github.com/user-attachments/assets/aad42acc-6b13-4591-a8dd-b0a96eeb7d1c)
+![image](https://github.com/user-attachments/assets/7fb01753-645a-4d10-a916-8ec0f4b29233)
+![image](https://github.com/user-attachments/assets/7c0eb44e-4f74-45a6-a8ed-65655d97269c)
+
+
 # Сайт для путешествий 
 В репозитории представлен макет, который можно использовать для реального проекта. Что есть? 
 

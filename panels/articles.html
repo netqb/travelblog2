@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Все статьи | Wanderlust</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">Wanderlust<span>.</span></a>
+                <nav class="nav">
+                    <a href="/">Главная</a>
+                    <a href="/articles" class="active">Статьи</a>
+                    <a href="/destinations">Направления</a>
+                    <a href="/authors">Авторы</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="/login" class="btn-login"><i class="fas fa-user"></i> Войти</a>
+                    <a href="/register" class="btn-register">Регистрация</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="articles-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Исследуйте мир через наши статьи</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">Более 500 вдохновляющих историй от
+                    путешественников со всего мира</p>
+
+                <div class="articles-filter" data-aos="fade-up" data-aos-delay="200">
+                    <div class="filter-group">
+                        <label for="category"><i class="fas fa-tag"></i> Категория</label>
+                        <select id="category">
+                            <option value="">Все категории</option>
+                            <option value="europe">Европа</option>
+                            <option value="asia">Азия</option>
+                            <option value="america">Америка</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort"><i class="fas fa-sort"></i> Сортировка</label>
+                        <select id="sort">
+                            <option value="newest">Сначала новые</option>
+                            <option value="popular">Сначала популярные</option>
+                            <option value="featured">Рекомендуемые</option>
+                        </select>
+                    </div>
+                    <button class="btn-filter"><i class="fas fa-filter"></i> Применить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="articles-section">
+            <div class="section-header">
+                <h2 class="section-title">Последние статьи</h2>
+                <div class="view-options">
+                    <button class="view-option active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-option" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <div class="articles-grid" id="articles-grid">
+
+                <article class="article-card" data-aos="fade-up">
+                    <div class="card-image">
+                        <img src="/images/articles/italy-1.jpg" alt="Рим">
+                        <div class="card-badge">Италия</div>
+                        <button class="card-save"><i class="far fa-bookmark"></i></button>
+                    </div>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <span class="author"><i class="fas fa-user"></i> Анна Петрова</span>
+                            <span class="date"><i class="far fa-calendar"></i> 15 мая 2023</span>
+                        </div>
+                        <h3 class="article-title">3 дня в Риме: идеальный маршрут для первого посещения</h3>
+                        <p class="article-excerpt">Как увидеть все главные достопримечательности Вечного города всего за
+                            три дня и не упустить ничего важного...</p>
+                        <div class="article-footer">
+                            <a href="/article/3-days-in-rome" class="btn-read">Читать статью <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 2.4K</span>
+                                <span><i class="fas fa-heart"></i> 356</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="load-more-wrapper">
+                <button class="btn-load-more">Показать ещё статьи</button>
+            </div>
+        </section>
+
+        <section class="tags-section" data-aos="fade-up">
+            <h3 class="section-subtitle">Популярные теги</h3>
+            <div class="tags-list">
+                <a href="#" class="tag">#Европа</a>
+                <a href="#" class="tag">#Бюджетно</a>
+                <a href="#" class="tag">#Семейные</a>
+                <a href="#" class="tag">#Гастрономия</a>
+                <a href="#" class="tag">#Пляжи</a>
+                <a href="#" class="tag">#Города</a>
+                <a href="#" class="tag">#Природа</a>
+                <a href="#" class="tag">#История</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3 class="footer-logo">Wanderlust<span>.</span></h3>
+                    <p>Современный блог о путешествиях. Открываем мир вместе с 2023 года.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/articles">Статьи</a></li>
+                        <li><a href="/destinations">Направления</a></li>
+                        <li><a href="/authors">Авторы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Популярные теги</h4>
+                    <div class="tags">
+                        <a href="#">Европа</a>
+                        <a href="#">Азия</a>
+                        <a href="#">Бюджетно</a>
+                        <a href="#">Семейные</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@wanderlust.com</li>
+                        <li><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Wanderlust. Все права защищены.</p>
+                <div class="legal-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        document.querySelectorAll('.view-option').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.view-option').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const view = this.dataset.view;
+                document.getElementById('articles-grid').className = `articles-${view}`;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.pathname.startsWith('/articles')) {
+                loadArticles();
+            }
+        });
+
+        async function loadArticles(page = 1) {
+            try {
+                const response = await fetch(`/api/articles?page=${page}`);
+                const data = await response.json();
+                const container = document.getElementById('articles-grid');
+
+                if (page === 1) container.innerHTML = '';
+
+                data.articles.forEach((article, index) => {
+                    const card = createArticleCard(article, index);
+                    container.appendChild(card);
+                });
+
+                document.querySelector('.btn-load-more').disabled = !data.hasMore;
+            } catch (err) {
+                console.error('Ошибка загрузки статей:', err);
+            }
+        }
+
+        function createArticleCard(article) {
+            const card = document.createElement('article');
+            card.className = 'article-card';
+            card.innerHTML = `
+                <div class="card-image">
+                    <img src="${article.image_url || '/images/default-travel.jpg'}" alt="${article.title}">
+                    <div class="card-badge">${article.category || 'Путешествия'}</div>
+                    <button class="card-save"><i class="far fa-bookmark"></i></button>
+                </div>
+                <div class="card-content">
+                    <div class="article-meta">
+                        <span class="author"><i class="fas fa-user"></i> ${article.author_name || 'Автор'}</span>
+                        <span class="date"><i class="far fa-calendar"></i> ${new Date(article.created_at).toLocaleDateString()}</span>
+                    </div>
+                    <h3 class="article-title">${article.title}</h3>
+                    <p class="article-excerpt">${article.excerpt || ''}</p>
+                    <div class="article-footer">
+                        <a href="/article/${article.slug || article.id}" class="btn-read">Читать статью <i class="fas fa-arrow-right"></i></a>
+                        <div class="article-stats">
+                            <span><i class="fas fa-eye"></i> ${article.views || 0}</span>
+                            <span><i class="fas fa-heart"></i> ${article.likes || 0}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+
+    </script>
+
+    <script>
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        }
+    </script>
+</body>
+
+</html>

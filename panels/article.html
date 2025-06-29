@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Просмотр статьи | Wanderlust</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">Wanderlust</a>
+                <nav class="nav">
+                    <a href="/">Главная</a>
+                    <a href="/articles">Статьи</a>
+                    <a href="/authors">Авторы</a>
+                </nav>
+                <div class="login-btn">
+                    <a href="/login"><i class="fas fa-user"></i> Войти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container article-page">
+        <section class="article-header" data-aos="fade-up">
+            <h1 id="article-title" class="article-title">Заголовок статьи</h1>
+            <a href="/articles" class="back-link">
+                <i class="fas fa-arrow-left"></i> Вернуться к списку статей
+            </a>
+            <div class="article-meta">
+                Автор: <span id="article-author">Неизвестный</span> •
+                Дата: <span id="article-date">-</span>
+            </div>
+            <div id="article-image" class="article-image" style="background-image: url('/images/default-travel.jpg')">
+            </div>
+        </section>
+
+        <section class="article-content" data-aos="fade-up" data-aos-delay="100">
+            <p id="article-full-text">Полный текст статьи будет загружен сюда.</p>
+        </section>
+
+        <section class="author-info-section" data-aos="fade-up" data-aos-delay="200">
+            <h2>Об авторе</h2>
+            <div class="author-card">
+                <div id="author-avatar" class="author-avatar"
+                    style="background-image: url('/images/default-avatar.png')"></div>
+                <div class="author-details">
+                    <h3 id="author-name">Имя автора</h3>
+                    <p id="author-bio">Биография автора...</p>
+                    <div class="author-stats">
+                        Подписчиков: <strong id="subscriber-count">0</strong>
+                        <button class="subscribe-btn" id="subscribe-button" data-author-id="">Подписаться</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comments-section" data-aos="fade-up" data-aos-delay="300">
+            <h2>Комментарии</h2>
+
+            <form id="comment-form">
+                <textarea placeholder="Оставьте свой комментарий..." required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+
+            <div class="comments-list" id="comments-list">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Wanderlust</h3>
+                    <p>Современный блог о путешествиях. Открываем мир вместе с 2025 года.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/articles">Статьи</a></li>
+                        <li><a href="/authors">Авторы</a></li>
+                        <li><a href="/login">Войти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Контакты</h4>
+                    <p>Email: info@wanderlust.blog</p>
+                    <p>Telegram: @wanderlust_blog</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <hr class="footer-divider">
+                <p>© 2025 Wanderlust. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleId = window.location.pathname.split('/')[2];
+            if (!articleId) return;
+
+            loadArticle(articleId);
+        });
+
+        async function loadArticle(id) {
+            try {
+                const response = await fetch(`/api/articles/${id}`);
+                const article = await response.json();
+
+                document.getElementById('article-title').textContent = article.title;
+                document.getElementById('article-date').textContent = new Date(article.created_at).toLocaleDateString();
+                document.getElementById('article-author').textContent = article.author_name || 'Неизвестный';
+                document.getElementById('article-full-text').innerHTML = `<p>${article.content.replace(/\n/g, '</p><p>')}</p>`;
+                document.querySelector('#article-image').style.backgroundImage = `url('${article.image_url || '/images/default-travel.jpg'}')`;
+
+                const author = article.author_info || {};
+                document.getElementById('author-name').textContent = author.username || 'Неизвестный';
+                document.getElementById('author-bio').textContent = author.bio || 'Автор не предоставил информацию.';
+                document.getElementById('author-avatar').style.backgroundImage = `url('${author.avatar || '/images/default-avatar.png'}')`;
+                document.getElementById('subscriber-count').textContent = article.subscriber_count || 0;
+                document.getElementById('subscribe-button').dataset.authorId = article.author_id || '';
+
+                const commentsContainer = document.getElementById('comments-list');
+                if (!commentsContainer) return;
+
+                if (Array.isArray(article.comments) && article.comments.length > 0) {
+                    commentsContainer.innerHTML = '';
+                    article.comments.forEach(comment => {
+                        const commentCard = createCommentCard(comment);
+                        commentsContainer.appendChild(commentCard);
+                    });
+                } else {
+                    commentsContainer.innerHTML = '<p>Нет комментариев</p>';
+                }
+
+            } catch (error) {
+                console.error('Ошибка загрузки статьи:', error);
+                document.querySelector('.article-page').innerHTML = '<p>Не удалось загрузить статью</p>';
+            }
+        }
+
+        document.getElementById('comment-form')?.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const textarea = this.querySelector('textarea');
+            const content = textarea.value.trim();
+            const articleId = window.location.pathname.split('/')[2];
+
+            if (!content) {
+                alert('Введите текст комментария');
+                return;
+            }
+
+            const author_id = 1;
+
+            try {
+                const res = await fetch('/api/comments', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ content, article_id: articleId, author_id })
+                });
+
+                if (res.ok) {
+                    textarea.value = '';
+                    loadArticle(articleId);
+                } else {
+                    const err = await res.json();
+                    alert(`Ошибка: ${err.error || 'Неизвестная ошибка'}`);
+                }
+            } catch (error) {
+                console.error('Ошибка отправки комментария:', error);
+                alert('Произошла ошибка при отправке комментария');
+            }
+        });
+
+        function createCommentCard(comment) {
+            const card = document.createElement('div');
+            card.className = 'comment-card';
+
+            card.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-user">
+                <div class="comment-avatar" style="background-image: url('${comment.author_avatar || '/images/default-avatar.png'}')"></div>
+                <span class="comment-author">${comment.author_name}</span>
+            </div>
+            <span class="comment-date">${new Date(comment.created_at).toLocaleString()}</span>
+        </div>
+        <div class="comment-body">
+            <p>${comment.content}</p>
+        </div>
+    `;
+
+            return card;
+        }
+    </script>
+
+</body>
+
+</html>

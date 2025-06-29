@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль автора - Wanderlust</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Wanderlust</h1>
+            <nav>
+                <a href="/">Главная</a>
+                <a href="/articles">Статьи</a>
+                <a href="/authors">Авторы</a>
+                <a href="/login">Войти</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="author-profile">
+            <div class="author-avatar"></div>
+            <div class="author-info">
+                <h2></h2>
+                <p class="author-bio"></p>
+
+                <div class="author-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Статьи</span>
+                        <span class="stat-value" id="article-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Подписчики</span>
+                        <span class="stat-value subscriber-count">0</span>
+                    </div>
+                </div>
+
+                <button class="subscribe-btn" data-author-id="">Подписаться</button>
+            </div>
+        </section>
+
+        <section class="author-articles">
+            <h3>Статьи автора</h3>
+        </section>
+
+        <section class="comments-section">
+            <h3>Комментарии</h3>
+            <form id="comment-form">
+                <div class="form-group">
+                    <textarea placeholder="Оставьте комментарий..." required></textarea>
+                </div>
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Wanderlust. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

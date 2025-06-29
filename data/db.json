@@ -1,0 +1,122 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "traveler_anna",
+      "email": "anna@example.com",
+      "password": "123",
+      "bio": "Люблю путешествовать и делиться впечатлениями",
+      "avatar": "/images/avatars/anna.jpg",
+      "created_at": "2023-06-15T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "username": "world_explorer",
+      "email": "explorer@example.com",
+      "password": "123",
+      "bio": "Фотограф и писатель-путешественник",
+      "avatar": "/images/default-avatar.png",
+      "created_at": "2023-05-20T14:30:00Z"
+    },
+    {
+      "id": 3,
+      "username": "new_user",
+      "email": "user3@example.com",
+      "password": "123",
+      "avatar": "/images/default-avatar.png",
+      "created_at": "2023-06-12T10:45:00Z"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Путешествие по Италии",
+      "content": "Италия — страна, где каждый уголок наполнен культурой...",
+      "image_url": "/images/italy.jpg",
+      "created_at": "2023-06-10T09:15:00Z",
+      "author_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Как путешествовать бюджетно по Японии",
+      "content": "Полный текст статьи...",
+      "author_id": 2,
+      "image_url": "/images/japan.jpg",
+      "created_at": "2023-06-05T11:20:00Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "content": "Отличная статья!",
+      "article_id": 1,
+      "author_id": 2,
+      "created_at": "2023-06-11T15:30:00Z"
+    },
+    {
+      "id": 2,
+      "content": "Обязательно посещу эти места!",
+      "article_id": 1,
+      "author_id": 3,
+      "created_at": "2023-06-12T10:45:00Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 1,
+      "subscriber_id": 3,
+      "author_id": 1,
+      "created_at": "2023-06-12T08:00:00Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "pypv2if0tllmci2prnm",
+      "user_id": 1,
+      "created_at": "2025-06-29T19:39:10.786Z",
+      "expires_at": "2025-07-29T19:39:10.786Z"
+    },
+    {
+      "token": "ms174zqe2sfmci2pxso",
+      "user_id": 1,
+      "created_at": "2025-06-29T19:39:18.744Z",
+      "expires_at": "2025-07-29T19:39:18.744Z"
+    },
+    {
+      "token": "2f4873ae17d143aa6d3b4e826ed792b31caf4d963ddb8b862552e3570dffd59a",
+      "user_id": 1,
+      "created_at": "2025-06-29T20:12:32.054Z",
+      "expires_at": "2025-07-29T20:12:32.054Z"
+    },
+    {
+      "token": "97b525528aaa059314e89d1fc8f70a5ab3bf458f8b9ecb8b2ccf71bc568e6c9f",
+      "user_id": 1,
+      "expires_at": "2025-07-29T20:20:41.962Z"
+    },
+    {
+      "token": "c0a94c5a2c40b3970dbce33278e5672e657978a54d3820862735ee85ec485b3e",
+      "user_id": 1,
+      "expires_at": "2025-07-29T20:20:47.025Z"
+    },
+    {
+      "token": "b4d137d377c0ed1cf6d2daf6c312d5a8c3798171e7240d48e2f17cc6a3b0ffbc",
+      "user_id": 1,
+      "expires_at": "2025-07-29T20:21:58.916Z"
+    },
+    {
+      "token": "8504083d586b454290f731b4f7314ae3b3fc4c1e12714271a75555363be8d14c",
+      "user_id": 1,
+      "expires_at": "2025-07-29T20:22:08.061Z"
+    },
+    {
+      "token": "825e9a05e9bae644eb0098631bb33f7a1b6acf252aa52d3dc3722848d438581c",
+      "user_id": 1,
+      "expires_at": "2025-07-29T20:22:17.445Z"
+    },
+    {
+      "token": "5bb4df57379adf997f62a9ea9a914e6e9f4013547d2e0076e9c498c751fa1395",
+      "user_id": 1,
+      "expires_at": "2025-07-29T20:22:23.232Z"
+    }
+  ]
+}

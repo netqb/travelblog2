@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Современный блог о путешествиях</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">Wanderlust<span>.</span></a>
+
+                <nav class="nav">
+                    <a href="/" class="active">Главная</a>
+                    <a href="/articles">Статьи</a>
+                    <a href="/destinations">Направления</a>
+                    <a href="/authors">Авторы</a>
+                </nav>
+
+                <div class="auth-buttons">
+                    <a href="/login" class="btn-login"><i class="fas fa-user"></i> Войти</a>
+                    <a href="/register" class="btn-register">Регистрация</a>
+                </div>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-video">
+                <video autoplay muted loop playsinline>
+                    <source src="/images/main.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Откройте <span>мир</span> заново</h1>
+                    <p class="hero-subtitle">Вдохновляющие истории из самых красивых уголков планеты</p>
+
+                    <div class="hero-search">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Куда мечтаете отправиться?">
+                            <button class="btn-primary">Найти</button>
+                        </div>
+                        <div class="search-tags">
+                            <span>Популярные запросы:</span>
+                            <a href="#">Италия</a>
+                            <a href="#">Япония</a>
+                            <a href="#">Бали</a>
+                            <a href="#">Нью-Йорк</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-down">
+                <span>Листайте вниз</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="section destinations">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Популярные направления</h2>
+                    <a href="/destinations" class="section-link">Все направления <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="swiper destinations-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="destination-card">
+                                <div class="card-image">
+                                    <img src="/images/1.jpg" alt="Италия">
+                                    <div class="card-badge">24 статьи</div>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Италия</h3>
+                                    <p>От римских руин до венецианских каналов</p>
+                                    <a href="/articles?country=italy" class="btn-explore">
+                                        Исследовать <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="destination-card">
+                                <div class="card-image">
+                                    <img src="/images/2.jpg" alt="Япония">
+                                    <div class="card-badge">18 статей</div>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Япония</h3>
+                                    <p>Современные мегаполисы и древние традиции</p>
+                                    <a href="/articles?country=japan" class="btn-explore">
+                                        Исследовать <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="destination-card">
+                                <div class="card-image">
+                                    <img src="/images/3.jpg" alt="Бали">
+                                    <div class="card-badge">15 статей</div>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Бали</h3>
+                                    <p>Тропический рай с богатой культурой</p>
+                                    <a href="/articles?country=bali" class="btn-explore">
+                                        Исследовать <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="destination-card">
+                                <div class="card-image">
+                                    <img src="/images/4.jpg" alt="Нью-Йорк">
+                                    <div class="card-badge">22 статьи</div>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Нью-Йорк</h3>
+                                    <p>Город, который никогда не спит</p>
+                                    <a href="/articles?country=usa&city=new-york" class="btn-explore">
+                                        Исследовать <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section featured-articles">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Лучшие статьи</h2>
+                    <a href="/articles" class="section-link">Все статьи <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="articles-grid">
+                    <article class="article-card featured">
+                        <div class="card-image">
+                            <img src="/images/5.jpg" alt="Рим">
+                            <div class="card-badge">Рекомендуем</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="article-meta">
+                                <span class="category">Италия</span>
+                                <span class="date">15 мая 2023</span>
+                                <span class="reading-time">8 мин чтения</span>
+                            </div>
+                            <h3 class="article-title">3 дня в Риме: идеальный маршрут для первого посещения</h3>
+                            <p class="article-excerpt">Как увидеть все главные достопримечательности Вечного города
+                                всего за три дня и не упустить ничего важного...</p>
+                            <div class="article-footer">
+                                <a href="/article/3-days-in-rome" class="btn-read">Читать статью</a>
+                                <div class="article-stats">
+                                    <span><i class="fas fa-eye"></i> 2.4K</span>
+                                    <span><i class="fas fa-heart"></i> 356</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="/images/6.jpg" alt="Токио">
+                        </div>
+                        <div class="card-content">
+                            <div class="article-meta">
+                                <span class="category">Япония</span>
+                                <span class="date">10 мая 2023</span>
+                            </div>
+                            <h3 class="article-title">Необычные кафе Токио: от кошек до роботов</h3>
+                            <div class="article-footer">
+                                <a href="/article/tokyo-cafes" class="btn-read">Читать <i
+                                        class="fas fa-arrow-right"></i></a>
+                                <div class="article-stats">
+                                    <span><i class="fas fa-heart"></i> 124</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="/images/3.jpg" alt="Бали">
+                        </div>
+                        <div class="card-content">
+                            <div class="article-meta">
+                                <span class="category">Индонезия</span>
+                                <span class="date">5 мая 2023</span>
+                            </div>
+                            <h3 class="article-title">Скрытые пляжи Бали: где найти уединение</h3>
+                            <div class="article-footer">
+                                <a href="/article/bali-beaches" class="btn-read">Читать <i
+                                        class="fas fa-arrow-right"></i></a>
+                                <div class="article-stats">
+                                    <span><i class="fas fa-heart"></i> 98</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="/images/4.jpg" alt="Нью-Йорк">
+                        </div>
+                        <div class="card-content">
+                            <div class="article-meta">
+                                <span class="category">США</span>
+                                <span class="date">1 мая 2023</span>
+                            </div>
+                            <h3 class="article-title">Нью-Йорк как местный: нетуристические места</h3>
+                            <div class="article-footer">
+                                <a href="/article/nyc-like-local" class="btn-read">Читать <i
+                                        class="fas fa-arrow-right"></i></a>
+                                <div class="article-stats">
+                                    <span><i class="fas fa-heart"></i> 156</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section quote-section">
+            <div class="container">
+                <div class="quote-wrapper">
+                    <blockquote>
+                        <p>"Путешествие — это единственная вещь, купив которую, вы становитесь богаче"</p>
+                        <footer>— Андерс Хансен</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="section authors">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Наши авторы</h2>
+                    <a href="/authors" class="section-link">Все авторы <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="authors-grid">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="/images/9.jpg" alt="Анна Петрова">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-telegram"></i></a>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <h3>Анна Петрова</h3>
+                            <p class="author-bio">Фотограф и блогер, посетила 45 стран</p>
+                            <div class="author-stats">
+                                <span><i class="fas fa-pen-fancy"></i> 24 статьи</span>
+                                <span><i class="fas fa-heart"></i> 10.2K</span>
+                            </div>
+                            <a href="/author/anna-petrova" class="btn-follow">Подписаться</a>
+                        </div>
+                    </div>
+
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="/images/7.jpg" alt="Максим Иванов">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-vk"></i></a>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <h3>Максим Иванов</h3>
+                            <p class="author-bio">Эксперт по бюджетным путешествиям</p>
+                            <div class="author-stats">
+                                <span><i class="fas fa-pen-fancy"></i> 18 статей</span>
+                                <span><i class="fas fa-heart"></i> 8.7K</span>
+                            </div>
+                            <a href="/author/maxim-ivanov" class="btn-follow">Подписаться</a>
+                        </div>
+                    </div>
+
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="/images/8.jpg" alt="Николай Максимов">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <h3>Николай Максимов</h3>
+                            <p class="author-bio">Специалист по Азии, жил в 5 странах</p>
+                            <div class="author-stats">
+                                <span><i class="fas fa-pen-fancy"></i> 32 статьи</span>
+                                <span><i class="fas fa-heart"></i> 15.4K</span>
+                            </div>
+                            <a href="/author/elena-smirnova" class="btn-follow">Подписаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section newsletter">
+            <div class="container">
+                <div class="newsletter-wrapper">
+                    <div class="newsletter-content">
+                        <h2>Подпишитесь на нашу рассылку</h2>
+                        <p>Получайте лучшие статьи о путешествиях прямо на почту</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn-primary">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3 class="footer-logo">Wanderlust<span>.</span></h3>
+                    <p>Современный блог о путешествиях. Открываем мир вместе с 2025 года.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/articles">Статьи</a></li>
+                        <li><a href="/destinations">Направления</a></li>
+                        <li><a href="/authors">Авторы</a></li>
+                        <li><a href="/about">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Популярные теги</h4>
+                    <div class="tags">
+                        <a href="#">Европа</a>
+                        <a href="#">Азия</a>
+                        <a href="#">Бюджетно</a>
+                        <a href="#">Семейные</a>
+                        <a href="#">Экстрим</a>
+                        <a href="#">Гастрономия</a>
+                        <a href="#">Пляжи</a>
+                        <a href="#">Города</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@wanderlust.com</li>
+                        <li><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Путешественников, 15</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wanderlust. Все права защищены.</p>
+                <div class="legal-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

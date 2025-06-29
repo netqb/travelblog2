@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход | Wanderlust</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-logo">
+                <a href="/">Wanderlust<span>.</span></a>
+                <p>Откройте мир заново</p>
+            </div>
+            <div class="auth-image" style="background-image: url('/images/auth-bg.jpg')"></div>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <h1>Вход в аккаунт</h1>
+                <p class="auth-subtitle">Введите свои данные, чтобы продолжить</p>
+
+                <form class="auth-form" id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Ваш email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Ваш пароль" required>
+                            <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                        </div>
+                        <a href="/forgot-password" class="forgot-password">Забыли пароль?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Войти</button>
+
+                    <div class="auth-divider">
+                        <span>или</span>
+                    </div>
+
+                    <div class="social-auth">
+                        <button type="button" class="btn-social google">
+                            <img src="/images/google-icon.svg" alt="Google">
+                            Продолжить с Google
+                        </button>
+                        <button type="button" class="btn-social facebook">
+                            <img src="/images/facebook-icon.svg" alt="Facebook">
+                            Продолжить с Facebook
+                        </button>
+                    </div>
+
+                    <div class="auth-footer">
+                        Нет аккаунта? <a href="/register">Зарегистрироваться</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function () {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
+                }
+            });
+        });
+
+        function showNotification(type, message, duration = 5000) {
+            const container = document.getElementById('notification-container');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+
+            const icons = {
+                error: 'fas fa-exclamation-circle',
+                success: 'fas fa-check-circle',
+                warning: 'fas fa-exclamation-triangle'
+            };
+
+            notification.innerHTML = `
+        <div>
+            <i class="${icons[type]}"></i>
+            ${message}
+        </div>
+        <button class="notification-close">&times;</button>
+    `;
+
+            container.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+                notification.style.opacity = '1';
+            }, 10);
+
+            const closeBtn = notification.querySelector('.notification-close');
+            closeBtn.addEventListener('click', () => {
+                closeNotification(notification);
+            });
+
+            if (duration) {
+                setTimeout(() => {
+                    closeNotification(notification);
+                }, duration);
+            }
+
+            return notification;
+        }
+
+        function closeNotification(notification) {
+            notification.style.animation = 'slideOut 0.3s ease-out forwards';
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }
+
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                showNotification('error', 'Пожалуйста, заполните все поля');
+                return;
+            }
+
+            setTimeout(() => {
+
+                showNotification('error', 'Неверный email или пароль');
+            }, 1000);
+        });
+
+
+    </script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Ошибка входа');
+                }
+
+                const data = await response.json();
+
+                document.cookie = `session_token=${data.token}; path=/; max-age=${30 * 24 * 60 * 60}`;
+
+                window.location.href = '/profile';
+            } catch (error) {
+                showNotification('error', error.message);
+            }
+        });
+    </script>
+    <div class="notification-container" id="notification-container">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Авторы | Wanderlust</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">Wanderlust<span>.</span></a>
+                <nav class="nav">
+                    <a href="/">Главная</a>
+                    <a href="/articles">Статьи</a>
+                    <a href="/destinations">Направления</a>
+                    <a href="/authors" class="active">Авторы</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="/login" class="btn-login"><i class="fas fa-user"></i> Войти</a>
+                    <a href="/register" class="btn-register">Регистрация</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="authors-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Наши авторы</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">Познакомьтесь с путешественниками,
+                    которые делятся своими историями</p>
+
+                <div class="search-bar" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Найти автора...">
+                    <button class="btn-primary">Поиск</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="section featured-authors">
+            <div class="section-header">
+                <h2 class="section-title">Популярные авторы</h2>
+                <div class="sort-options">
+                    <span>Сортировка:</span>
+                    <select id="sort-authors">
+                        <option value="popular">По популярности</option>
+                        <option value="new">Сначала новые</option>
+                        <option value="articles">По количеству статей</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="authors-grid" id="authors-grid">
+                <div class="author-card" data-aos="fade-up">
+                    <div class="author-avatar">
+                        <img src="/images/6.jpg" alt="Анна Петрова">
+                        <div class="author-badge">Топ автор</div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h3>Анна Петрова</h3>
+                        <p class="author-bio">Фотограф и блогер, посетила 45 стран</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>24 статьи</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span>10.2K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>3.4K подписчиков</span>
+                            </div>
+                        </div>
+                        <div class="author-footer">
+                            <a href="/author/anna-petrova" class="btn-primary">Профиль</a>
+                            <button class="btn-outline btn-follow">Подписаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="author-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="author-avatar">
+                        <img src="/images/7.jpg" alt="Максим Иванов">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h3>Максим Иванов</h3>
+                        <p class="author-bio">Эксперт по бюджетным путешествиям</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>18 статей</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span>8.7K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>2.1K подписчиков</span>
+                            </div>
+                        </div>
+                        <div class="author-footer">
+                            <a href="/author/maxim-ivanov" class="btn-primary">Профиль</a>
+                            <button class="btn-outline btn-follow">Подписаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="author-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="author-avatar">
+                        <img src="/images/8.jpg" alt="Елена Смирнова">
+                        <div class="author-badge">Редактор</div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h3>Елена Смирнова</h3>
+                        <p class="author-bio">Специалист по Азии, жила в 5 странах</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>32 статьи</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span>15.4K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>5.6K подписчиков</span>
+                            </div>
+                        </div>
+                        <div class="author-footer">
+                            <a href="/author/elena-smirnova" class="btn-primary">Профиль</a>
+                            <button class="btn-outline btn-follow">Подписаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="author-card" data-aos="fade-up">
+                    <div class="author-avatar">
+                        <img src="/images/9.jpg" alt="Дмитрий Соколов">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h3>Дмитрий Соколов</h3>
+                        <p class="author-bio">Эксперт по экстремальным путешествиям</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>15 статей</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span>7.2K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>1.8K подписчиков</span>
+                            </div>
+                        </div>
+                        <div class="author-footer">
+                            <a href="/author/dmitry-sokolov" class="btn-primary">Профиль</a>
+                            <button class="btn-outline btn-follow">Подписаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="author-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="author-avatar">
+                        <img src="/images/9.jpg" alt="Ольга Кузнецова">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h3>Ольга Кузнецова</h3>
+                        <p class="author-bio">Семейные путешествия с детьми</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>21 статья</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span>9.5K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>3.1K подписчиков</span>
+                            </div>
+                        </div>
+                        <div class="author-footer">
+                            <a href="/author/olga-kuznetsova" class="btn-primary">Профиль</a>
+                            <button class="btn-outline btn-follow">Подписаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="author-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="author-avatar">
+                        <img src="/images/9.jpg" alt="Иван Васильев">
+                        <div class="author-badge">Фотограф</div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-500px"></i></a>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <h3>Иван Васильев</h3>
+                        <p class="author-bio">Профессиональный тревел-фотограф</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>28 статей</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span>12.7K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>4.3K подписчиков</span>
+                            </div>
+                        </div>
+                        <div class="author-footer">
+                            <a href="/author/ivan-vasilyev" class="btn-primary">Профиль</a>
+                            <button class="btn-outline btn-follow">Подписаться</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more-wrapper">
+                <button class="btn-load-more">Показать ещё авторов</button>
+            </div>
+        </section>
+
+        <section class="section authors-articles">
+            <h2 class="section-title">Последние статьи наших авторов</h2>
+            <p class="section-subtitle">Самые свежие и популярные материалы</p>
+
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="card-image">
+                        <img src="/images/1.jpg" alt="Рим">
+                        <div class="card-badge">Италия</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <span class="author"><img src="/images/authors/author1-thumb.jpg" alt="Анна Петрова"> Анна
+                                Петрова</span>
+                            <span class="date">15 мая 2023</span>
+                        </div>
+                        <h3 class="article-title">3 дня в Риме: идеальный маршрут</h3>
+                        <div class="article-footer">
+                            <a href="/article/3-days-in-rome" class="btn-read">Читать <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 2.4K</span>
+                                <span><i class="fas fa-heart"></i> 356</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-image">
+                        <img src="/images/2.jpg" alt="Токио">
+                        <div class="card-badge">Япония</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <span class="author"><img src="/images/authors/author2-thumb.jpg" alt="Максим Иванов">
+                                Максим Иванов</span>
+                            <span class="date">12 мая 2023</span>
+                        </div>
+                        <h3 class="article-title">Токио за $50 в день: бюджетный гид</h3>
+                        <div class="article-footer">
+                            <a href="/article/tokyo-budget" class="btn-read">Читать <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 1.8K</span>
+                                <span><i class="fas fa-heart"></i> 245</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-image">
+                        <img src="/images/3.jpg" alt="Бали">
+                        <div class="card-badge">Индонезия</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <span class="author"><img src="/images/authors/author3-thumb.jpg" alt="Елена Смирнова">
+                                Елена Смирнова</span>
+                            <span class="date">8 мая 2023</span>
+                        </div>
+                        <h3 class="article-title">Скрытые пляжи Бали: где найти уединение</h3>
+                        <div class="article-footer">
+                            <a href="/article/bali-beaches" class="btn-read">Читать <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 2.1K</span>
+                                <span><i class="fas fa-heart"></i> 312</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3 class="footer-logo">Wanderlust<span>.</span></h3>
+                    <p>Современный блог о путешествиях. Открываем мир вместе с 2023 года.</p>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/articles">Статьи</a></li>
+                        <li><a href="/destinations">Направления</a></li>
+                        <li><a href="/authors">Авторы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Популярные теги</h4>
+                    <div class="tags">
+                        <a href="#">Европа</a>
+                        <a href="#">Азия</a>
+                        <a href="#">Бюджетно</a>
+                        <a href="#">Семейные</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@wanderlust.com</li>
+                        <li><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Wanderlust. Все права защищены.</p>
+                <div class="legal-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        }
+
+        document.querySelectorAll('.btn-follow').forEach(btn => {
+            btn.addEventListener('click', function () {
+                this.classList.toggle('following');
+                this.textContent = this.classList.contains('following') ? 'Вы подписаны' : 'Подписаться';
+
+                if (this.classList.contains('following')) {
+                    this.classList.remove('btn-outline');
+                    this.classList.add('btn-secondary');
+                } else {
+                    this.classList.add('btn-outline');
+                    this.classList.remove('btn-secondary');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.pathname.startsWith('/authors')) {
+            }
+        });
+    </script>
+</body>
+
+</html>

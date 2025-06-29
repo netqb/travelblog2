@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | Wanderlust</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-logo">
+                <a href="/">Wanderlust<span>.</span></a>
+                <p>Начните свое путешествие</p>
+            </div>
+            <div class="auth-image" style="background-image: url('/images/auth-register-bg.jpg')"></div>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <h1>Создать аккаунт</h1>
+                <p class="auth-subtitle">Заполните форму, чтобы зарегистрироваться</p>
+
+                <form class="auth-form" id="register-form">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Ваш email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Придумайте пароль" required>
+                            <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                        </div>
+                        <div class="password-hint">
+                            Пароль должен содержать минимум 8 символов
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Подтвердите пароль</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirm-password" placeholder="Повторите пароль" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Я согласен с <a href="/terms">Условиями использования</a> и <a
+                                href="/privacy">Политикой конфиденциальности</a></label>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Зарегистрироваться</button>
+
+                    <div class="auth-divider">
+                        <span>или</span>
+                    </div>
+
+                    <div class="social-auth">
+                        <button type="button" class="btn-social google">
+                            <img src="/images/google-icon.svg" alt="Google">
+                            Продолжить с Google
+                        </button>
+                        <button type="button" class="btn-social facebook">
+                            <img src="/images/facebook-icon.svg" alt="Facebook">
+                            Продолжить с Facebook
+                        </button>
+                    </div>
+
+                    <div class="auth-footer">
+                        Уже есть аккаунт? <a href="/login">Войти</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function () {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
+                }
+            });
+        });
+
+        document.getElementById('register-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const terms = document.getElementById('terms').checked;
+
+            if (!name || !email || !password || !confirmPassword) {
+                showNotification('error', 'Пожалуйста, заполните все поля');
+                return;
+            }
+
+            if (password.length < 8) {
+                showNotification('error', 'Пароль должен содержать минимум 8 символов');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showNotification('error', 'Пароли не совпадают');
+                return;
+            }
+
+            if (!terms) {
+                showNotification('warning', 'Необходимо принять условия использования');
+                return;
+            }
+
+            setTimeout(() => {
+                showNotification('error', 'Пользователь с таким email уже существует');
+            }, 1000);
+        });
+    </script>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                showNotification('error', 'Пароли не совпадают');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: name,
+                        email,
+                        password
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Ошибка регистрации');
+                }
+
+                const data = await response.json();
+
+                document.cookie = `session_token=${data.token}; path=/; max-age=${30 * 24 * 60 * 60}`;
+
+                window.location.href = '/profile';
+            } catch (error) {
+                showNotification('error', error.message);
+            }
+        });
+    </script>
+</body>
+
+</html>

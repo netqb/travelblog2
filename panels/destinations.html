@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Направления | Wanderlust</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">Wanderlust<span>.</span></a>
+                <nav class="nav">
+                    <a href="/">Главная</a>
+                    <a href="/articles">Статьи</a>
+                    <a href="/destinations" class="active">Направления</a>
+                    <a href="/authors">Авторы</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="/login" class="btn-login"><i class="fas fa-user"></i> Войти</a>
+                    <a href="/register" class="btn-register">Регистрация</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="destinations-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Откройте для себя мир</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">Исследуйте лучшие направления для
+                    вашего следующего путешествия</p>
+
+                <div class="search-bar" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Поиск направлений...">
+                    <button class="btn-primary">Найти</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section featured-destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Популярные направления</h2>
+                <a href="#" class="section-link">Все направления <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="destinations-grid">
+                <div class="destination-card" data-aos="fade-up">
+                    <div class="card-image">
+                        <img src="/images/1.jpg" alt="Италия">
+                        <div class="card-badge">24 статьи</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Италия</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Европа</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <p>От римских руин до венецианских каналов</p>
+                        <a href="/destinations/italy" class="btn-explore">Исследовать <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-image">
+                        <img src="/images/2.jpg" alt="Япония">
+                        <div class="card-badge">18 статей</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Япония</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Азия</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <p>Современные мегаполисы и древние традиции</p>
+                        <a href="/destinations/japan" class="btn-explore">Исследовать <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="/images/3.jpg" alt="Бали">
+                        <div class="card-badge">15 статей</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Бали</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Индонезия</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <p>Тропический рай с богатой культурой</p>
+                        <a href="/destinations/bali" class="btn-explore">Исследовать <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-aos="fade-up">
+                    <div class="card-image">
+                        <img src="/images/4.jpg" alt="Нью-Йорк">
+                        <div class="card-badge">22 статьи</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Нью-Йорк</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> США</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <p>Город, который никогда не спит</p>
+                        <a href="/destinations/new-york" class="btn-explore">Исследовать <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-image">
+                        <img src="/images/5.jpg" alt="Франция">
+                        <div class="card-badge">20 статей</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Франция</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Европа</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <p>Романтика, вино и изысканная кухня</p>
+                        <a href="/destinations/france" class="btn-explore">Исследовать <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="/images/6.jpg" alt="Тайланд">
+                        <div class="card-badge">17 статей</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Тайланд</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Азия</span>
+                            <span><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <p>Белоснежные пляжи и буддийские храмы</p>
+                        <a href="/destinations/thailand" class="btn-explore">Исследовать <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section top-cities">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Лучшие города для путешествий</h2>
+                <a href="#" class="section-link">Все города <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="swiper cities-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="city-card">
+                            <div class="card-image">
+                                <img src="/images/1.jpg" alt="Рим">
+                                <div class="card-overlay">
+                                    <h3>Рим</h3>
+                                    <p>Италия</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="city-stats">
+                                    <span><i class="fas fa-utensils"></i> 120+ ресторанов</span>
+                                    <span><i class="fas fa-landmark"></i> 50+ достопримечательностей</span>
+                                </div>
+                                <a href="/destinations/italy/rome" class="btn-explore">Маршруты <i
+                                        class="fas fa-route"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="city-card">
+                            <div class="card-image">
+                                <img src="/images/2.jpg" alt="Токио">
+                                <div class="card-overlay">
+                                    <h3>Токио</h3>
+                                    <p>Япония</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="city-stats">
+                                    <span><i class="fas fa-utensils"></i> 200+ ресторанов</span>
+                                    <span><i class="fas fa-landmark"></i> 30+ достопримечательностей</span>
+                                </div>
+                                <a href="/destinations/japan/tokyo" class="btn-explore">Маршруты <i
+                                        class="fas fa-route"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="city-card">
+                            <div class="card-image">
+                                <img src="/images/3.jpg" alt="Париж">
+                                <div class="card-overlay">
+                                    <h3>Париж</h3>
+                                    <p>Франция</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="city-stats">
+                                    <span><i class="fas fa-utensils"></i> 180+ ресторанов</span>
+                                    <span><i class="fas fa-landmark"></i> 45+ достопримечательностей</span>
+                                </div>
+                                <a href="/destinations/france/paris" class="btn-explore">Маршруты <i
+                                        class="fas fa-route"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="city-card">
+                            <div class="card-image">
+                                <img src="/images/4.jpg" alt="Нью-Йорк">
+                                <div class="card-overlay">
+                                    <h3>Нью-Йорк</h3>
+                                    <p>США</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="city-stats">
+                                    <span><i class="fas fa-utensils"></i> 250+ ресторанов</span>
+                                    <span><i class="fas fa-landmark"></i> 60+ достопримечательностей</span>
+                                </div>
+                                <a href="/destinations/usa/new-york" class="btn-explore">Маршруты <i
+                                        class="fas fa-route"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section categories-section">
+        <div class="container">
+            <h2 class="section-title">Исследуйте по категориям</h2>
+            <p class="section-subtitle">Найдите идеальное направление для вашего стиля путешествий</p>
+
+            <div class="categories-grid">
+                <a href="#" class="category-card" style="background-image: url('/images/1.jpg')">
+                    <div class="overlay"></div>
+                    <h3>Пляжный отдых</h3>
+                    <span>24 направления</span>
+                </a>
+
+                <a href="#" class="category-card" style="background-image: url('/images/2.jpg')">
+                    <div class="overlay"></div>
+                    <h3>Культура</h3>
+                    <span>18 направлений</span>
+                </a>
+
+                <a href="#" class="category-card" style="background-image: url('/images/3.jpg')">
+                    <div class="overlay"></div>
+                    <h3>Приключения</h3>
+                    <span>15 направлений</span>
+                </a>
+
+                <a href="#" class="category-card" style="background-image: url('/images/4.jpg')">
+                    <div class="overlay"></div>
+                    <h3>Гастрономия</h3>
+                    <span>22 направления</span>
+                </a>
+
+                <a href="#" class="category-card" style="background-image: url('/images/5.jpg')">
+                    <div class="overlay"></div>
+                    <h3>Природа</h3>
+                    <span>20 направлений</span>
+                </a>
+
+                <a href="#" class="category-card" style="background-image: url('/images/6.jpg')">
+                    <div class="overlay"></div>
+                    <h3>Романтические</h3>
+                    <span>12 направлений</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3 class="footer-logo">Wanderlust<span>.</span></h3>
+                    <p>Современный блог о путешествиях. Открываем мир вместе с 2025 года.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/articles">Статьи</a></li>
+                        <li><a href="/destinations">Направления</a></li>
+                        <li><a href="/authors">Авторы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Популярные теги</h4>
+                    <div class="tags">
+                        <a href="#">Европа</a>
+                        <a href="#">Азия</a>
+                        <a href="#">Бюджетно</a>
+                        <a href="#">Семейные</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@wanderlust.com</li>
+                        <li><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Wanderlust. Все права защищены.</p>
+                <div class="legal-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        const citiesSlider = new Swiper('.cities-slider', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4,
+                }
+            }
+        });
+
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        }
+    </script>
+
+</body>
+
+</html>
